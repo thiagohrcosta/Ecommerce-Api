@@ -1,24 +1,19 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![MainImg](https://res.cloudinary.com/dloadb2bx/image/upload/v1639272457/onebig_hiu9oa.png)
 
-Things you may want to cover:
+## Ecommerce - API
 
-* Ruby version
+Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE BIT CODE](https://onebitcode.com/)** que contará com uma aplicação Web (React) e outra Mobile (React Native)
 
-* System dependencies
+**Tecnologias utilizadas:** <br>
 
-* Configuration
+![enter image description here](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![enter image description here](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![enter image description here](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) 
 
-* Database creation
+  
 
-* Database initialization
+**Outras tecnologias utilizadas:**
+- **[MailCatcher](https://mailcatcher.me/)**
 
-* How to run the test suite
+**Recursos utilizados**:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Obs: Readme será atualizado ao longo do curso
