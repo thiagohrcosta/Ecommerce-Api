@@ -38,7 +38,7 @@ Foram desenvolvidos ao longo do curso 38 testes unitários.
 
 ## Etapas de desenvolvimento
 
-### Semana 01 - Desenvolvimento inicial do backend:
+### Semana 01 (12.12.21 a 19.12.21) - Desenvolvimento inicial do backend:
 Ao longo da primeira semana de desenvolvimento foram completadas as seguintes tarefas:
 - Configuração do envio de email;
 - Instalação do Devise Token Auth;
