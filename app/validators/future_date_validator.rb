@@ -1,9 +1,8 @@
 class FutureDateValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    if value.present?
-      if value < Date.today
-        record.errors[attribute] << (options[:message] || "Data tem qeu ser futura")
-      end
+    if value.present? && value <= Time.zone.now
+      message = options[:message] ||:future_date
+      record.errors.add(attribute, message)
     end
   end
 end

@@ -24,7 +24,7 @@ describe FutureDateValidator do
     
   end
 
-  contest "when date is equal current date" do
+  context "when date is equal current date" do
     before { subject.date = Time.zone.now }
 
     it "should be invalid" do
@@ -38,7 +38,7 @@ describe FutureDateValidator do
     
   end
 
-  contest "when date is greated then current date" do
+  context "when date is greated then current date" do
     before { subject.date = 1.day.from_now }
 
     it "should be valid" do
