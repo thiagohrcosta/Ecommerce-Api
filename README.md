@@ -39,6 +39,9 @@ Foram desenvolvidos ao longo do curso 38 testes unitários.
 ## Testes customizados
 Foram desenvolvidos também testes customizados tais como:
 ![testeCustom](https://res.cloudinary.com/dloadb2bx/image/upload/v1640100936/customTest_gjsamg.png)
+
+- Validação de data;
+
 ## Etapas de desenvolvimento
 
 ### Semana 01 (12.12.21 a 19.12.21) - Desenvolvimento inicial do backend:
