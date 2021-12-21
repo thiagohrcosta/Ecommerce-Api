@@ -36,6 +36,9 @@ Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE 
 Foram desenvolvidos ao longo do curso 38 testes unitários. 
 ![Testes](https://res.cloudinary.com/dloadb2bx/image/upload/v1639926392/ecommerceTest_tgqhtc.png)
 
+## Testes customizados
+Foram desenvolvidos também testes customizados tais como:
+![testeCustom](https://res.cloudinary.com/dloadb2bx/image/upload/v1640100936/customTest_gjsamg.png)
 ## Etapas de desenvolvimento
 
 ### Semana 01 (12.12.21 a 19.12.21) - Desenvolvimento inicial do backend:
