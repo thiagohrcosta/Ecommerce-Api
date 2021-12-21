@@ -25,10 +25,25 @@ describe FutureDateValidator do
   end
 
   contest "when date is equal current date" do
+    before { subject.date = Time.zone.now }
+
+    it "should be invalid" do
+      expect(subject.valid?).to be_falsey
+    end
+
+    it "adds an error on model" do
+      subject.valid?
+      expect(subject.errors.keys).to include(:date)
+    end
     
   end
 
   contest "when date is greated then current date" do
+    before { subject.date = 1.day.from_now }
+
+    it "should be valid" do
+      expect(subject.valid?).to be_truthy
+    end
   
   end
 end
