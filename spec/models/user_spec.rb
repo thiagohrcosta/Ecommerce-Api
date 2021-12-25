@@ -8,4 +8,7 @@ RSpec.describe User, type: :model do
     admin: 0,
     client: 1
   })}
+
+  it_behaves_like "name searchable concern", :user
+  it_behaves_like "paginatable concern", :user
 end
