@@ -1,15 +1,13 @@
-
 ![MainImg](https://res.cloudinary.com/dloadb2bx/image/upload/v1639272457/onebig_hiu9oa.png)
-
+ 
 ## Ecommerce - API
 
 Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE BIT CODE](https://onebitcode.com/)** que contará com uma aplicação Web (React) e outra Mobile (React Native)
 
 **Principais tecnologias utilizadas:** <br>
 
-![enter image description here](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![enter image description here](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![enter image description here](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) 
+![enter image description here](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![enter image description here](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![enter image description here](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-  
 
 ## Outras tecnologias utilizadas:
 
@@ -30,22 +28,20 @@ Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE 
 
 **Idioma**
 - [I18n](https://github.com/ruby-i18n/i18n)
-
+  
 ## Testes
 
-Foram desenvolvidos ao longo do curso 38 testes unitários. 
-![Testes](https://res.cloudinary.com/dloadb2bx/image/upload/v1639926392/ecommerceTest_tgqhtc.png)
+Foram desenvolvidos ao longo do curso 157 testes.
 
-## Testes customizados
-Foram desenvolvidos também testes customizados tais como:
-![testeCustom](https://res.cloudinary.com/dloadb2bx/image/upload/v1640100936/customTest_gjsamg.png)
+![Testes](https://res.cloudinary.com/dloadb2bx/image/upload/v1640465355/testesOneBit_ietp7e.png)
 
-- Validação de data;
 
 ## Etapas de desenvolvimento
 
 ### Semana 01 (12.12.21 a 19.12.21) - Desenvolvimento inicial do backend:
+
 Ao longo da primeira semana de desenvolvimento foram completadas as seguintes tarefas:
+
 - Configuração do envio de email;
 - Instalação do Devise Token Auth;
 - Configuração da autenticação na API;
@@ -57,6 +53,23 @@ Ao longo da primeira semana de desenvolvimento foram completadas as seguintes ta
 - Elaboração das associações entre as tabelas;
 - Edição do model User criado originalmente pelo devise;
 
+### Semana 01 (20.12.21 a 26.12.21) - Testes, validações e CRUD:
 
+- Criação de validações customizadas;
+- Utilização de validações customizadas no model Coupon;
+- Instalação do Active Storage;
+- Adição de imagem para um produto;
+- Configuração dos testes de Request;
+- Jbuilder e rotas iniciais;
+- Cadastro de categorias e renderização de erros;
+- Atualização de categorias;
+- Remoção de categorias;
+- Utilização de Shared Examples para acesso restrito;
+- Configuração de restrição de acesso;
+- Criação de concerns para renderização de erros;
+- Adição de busca por nome nos models;
+- Paginação dos models;
+- Aplicação do concerns aos outros models.
+  
 
 Obs: Readme será atualizado ao longo do curso
