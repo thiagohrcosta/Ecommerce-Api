@@ -26,8 +26,11 @@ Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE 
 - **[FactoryBot](https://github.com/thoughtbot/factory_bot_rails)**
 - **[Faker](https://github.com/faker-ruby/faker)**
 
+**JSON**:
+- **[JBuilder](https://github.com/rails/jbuilder)**
+
 **Idioma**
-- [I18n](https://github.com/ruby-i18n/i18n)
+- **[I18n](https://github.com/ruby-i18n/i18n)**
   
 ## Testes
 
@@ -53,7 +56,7 @@ Ao longo da primeira semana de desenvolvimento foram completadas as seguintes ta
 - Elaboração das associações entre as tabelas;
 - Edição do model User criado originalmente pelo devise;
 
-### Semana 01 (20.12.21 a 26.12.21) - Testes, validações e CRUD:
+### Semana 02 (20.12.21 a 26.12.21) - Testes, validações e CRUD:
 
 - Criação de validações customizadas;
 - Utilização de validações customizadas no model Coupon;
