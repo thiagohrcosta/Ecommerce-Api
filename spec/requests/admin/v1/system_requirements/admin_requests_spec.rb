@@ -57,9 +57,37 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
         post url, headers: auth_header(user), params: system_requirement_invalid_params
         expect(response).to have_http_status(:unprocessable_entity)
       end
+    end
+  end
+
+  context "PATCH /system_requirement/:id" do
+    let(:system_requirement) { create(:system_requirement) }
+    let(:url) { "/admin/v1/system_requirements/#{system_requirement.id}" }
+
+    context "with valid params" do
+      let(:new_name) { "My new SystemRequirement" }
+      let(:system_requirement_params) { { system_requirement: { name: new_name } }.to_json }
+
+      it "updates SystemRequirement" do
+        patch url, headers: auth_header(user), params: system_requirement_params
+        system_requirement.reload
+        expect(system_requirement.name).to eq new_name
+      end
+
+      it "returns updated SystemRequirement" do
+        patch url, headers: auth_header(user), params: system_requirement_params
+        system_requirement.reload
+        expected_system_requirement = system_requirement.as_json(only: %i(id name memory operational_system processor storage video_board))
+        expect(body_json['system_requirement']).to eq expected_system_requirement
+      end
+
+      it "returns status 200 success" do
+        patch url, headers: auth_header(user), params: system_requirement_params
+        expect(response).to have_http_status(:ok)
+      end
 
     end
- 
+  
   end
 
 

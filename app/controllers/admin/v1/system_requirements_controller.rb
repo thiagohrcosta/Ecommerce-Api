@@ -1,6 +1,6 @@
 module Admin::V1
   class SystemRequirementsController < ApiController
-    before_action :load_system_requirement, only: [:show]
+    before_action :load_system_requirement, only: [:show, :update]
 
     def index
       @system_requirements = SystemRequirement.all
@@ -14,6 +14,10 @@ module Admin::V1
       save_system_requirement!
     end
 
+    def update
+      @system_requirement.attributes = system_requirement_params
+      save_system_requirement!
+    end
 
     private
 
