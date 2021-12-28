@@ -17,7 +17,7 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
       expect(response).to have_http_status(:ok)
     end
   end
-
+  
   context "POST /system_requirements" do
     let(:url) { "/admin/v1/system_requirements" }
 
@@ -106,9 +106,55 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
         patch url, headers: auth_header(user), params: system_requirement_invalid_params
         expect(body_json['errors']['fields']).to have_key('name')
       end
-
     end
+  end
+
+  context "DELETE /system_requirements/:id" do
+    let!(:system_requirement) { create(:system_requirement) }
+    let(:url) { "/admin/v1/system_requirements/#{system_requirement.id}" }
+
+    context "without associated Game" do
+      it "removes SystemRequirement" do
+        expect do
+          delete url, headers: auth_header(user)
+        end.to change(SystemRequirement, :count).by(-1)
+      end
   
+      it "returns success status" do
+        delete url, headers: auth_header(user)
+        expect(response).to have_http_status(:no_content)
+      end
+  
+      it "does not return any body content" do
+        delete url, headers: auth_header(user)
+        expect(body_json).to_not be_present
+      end
+      
+    end
+    
+    context "with associated Game" do
+      before(:each) do
+        create(:game, system_requirement: system_requirement)
+      end
+
+      it 'does not remove SystemRequirement' do
+        expect do  
+          delete url, headers: auth_header(user)
+        end.to_not change(SystemRequirement, :count)
+      end
+
+      it 'returns unprocessable_entity status' do
+        delete url, headers: auth_header(user)
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'returns error on :base key' do
+        delete url, headers: auth_header(user)
+        expect(body_json['errors']['fields']).to have_key('base')
+      end
+    end
+
+    
   end
 
 
