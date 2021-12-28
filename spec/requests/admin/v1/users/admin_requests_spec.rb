@@ -4,8 +4,8 @@ RSpec.describe "Admin V1 Users as :admin", type: :request do
   let(:user_logged) { create(:user, profile: :admin) }
 
   context "GET /users" do
-    let(:url) { "/admin/v1/users" }
     let!(:users) { create_list(:user, 10) }
+    let(:url) { "/admin/v1/users" }
     
     context "without any params" do
       it "returns 10 users" do
