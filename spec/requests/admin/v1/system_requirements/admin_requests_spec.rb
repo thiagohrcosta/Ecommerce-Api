@@ -30,6 +30,12 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
         end.to change(SystemRequirement, :count).by(1)
       end
 
+      it "returns last added SystemRequirement" do
+        post url, headers: auth_header(user), params: system_requirement_params
+        expected_system_requirement = SystemRequirement.last.as_json(only: %i(id name memory operational_system processor storage video_board))
+        expect(body_json['system_requirement']).to eq expected_system_requirement
+      end
+
     end
   
   end
