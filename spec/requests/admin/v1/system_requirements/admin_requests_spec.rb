@@ -85,6 +85,27 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
         patch url, headers: auth_header(user), params: system_requirement_params
         expect(response).to have_http_status(:ok)
       end
+    end
+
+    context "with invalid params" do
+      let(:system_requirement_invalid_params) { { system_requirement: { name: nil } }.to_json }
+
+      it "does not update SystemRequirement" do
+        old_name = system_requirement.name
+        patch url, headers: auth_header(user), params: system_requirement_invalid_params
+        system_requirement.reload
+        expect(system_requirement.name).to eq old_name
+      end
+
+      it "returns unprocessable_entity status" do
+        patch url, headers: auth_header(user), params: system_requirement_invalid_params
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it "returns error message" do
+        patch url, headers: auth_header(user), params: system_requirement_invalid_params
+        expect(body_json['errors']['fields']).to have_key('name')
+      end
 
     end
   
