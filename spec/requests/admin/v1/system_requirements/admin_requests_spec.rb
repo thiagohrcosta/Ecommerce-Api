@@ -35,9 +35,32 @@ RSpec.describe "Admin V1 System Requirements as :admin", type: :request do
         expected_system_requirement = SystemRequirement.last.as_json(only: %i(id name memory operational_system processor storage video_board))
         expect(body_json['system_requirement']).to eq expected_system_requirement
       end
+    end
+ 
+    context "with invalid params" do
+      let(:system_requirement_invalid_params) do 
+        { system_requirement: attributes_for(:system_requirement, name: nil) }.to_json
+      end
+    
+      it 'does not add a new SystemRequirement' do
+        expect do
+          post url, headers: auth_header(user), params: system_requirement_invalid_params
+        end.to_not change(SystemRequirement, :count)
+      end
+
+      it 'returns error message' do
+        post url, headers: auth_header(user), params: system_requirement_invalid_params
+        expect(body_json['errors']['fields']).to have_key('name')
+      end
+
+      it 'returns unprocessable_entity status' do
+        post url, headers: auth_header(user), params: system_requirement_invalid_params
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
 
     end
-  
+ 
   end
+
 
 end
