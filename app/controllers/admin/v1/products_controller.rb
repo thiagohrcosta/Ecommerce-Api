@@ -1,16 +1,23 @@
 module Admin::V1
   class ProductsController < ApiController
+    before_action :load_product, only: [:show, :update, :destroy]
 
     def index
       @products = load_products
     end
 
     def create
+      run_service
+    rescue Admin::ProductSavingService::NotSavedProductError
+      render_error(fields: @saving_service.errors)
     end
 
     def show;end
 
     def update
+      run_service
+    rescue Admin::ProductSavingService::NotSavedProductError
+      render_error(fields: @saving_service.errors)
     end
 
     def destroy
@@ -21,6 +28,10 @@ module Admin::V1
     def load_products
       permitted = params.permit({ search: :name }, { order: {} }, :page, :length)
       Admin::ModelLoadingService.new(Product.all, permitted).call
+    end
+
+    def load_product
+      @product = Product.find(params[:id])
     end
 
     def product_params
