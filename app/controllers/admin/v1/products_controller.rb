@@ -2,8 +2,10 @@ module Admin::V1
   class ProductsController < ApiController
 
     def index
-      products = load_products
+      @products = load_products
     end
+
+    def create
 
     private
 
