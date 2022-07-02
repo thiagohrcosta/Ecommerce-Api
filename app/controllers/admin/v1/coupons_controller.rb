@@ -1,13 +1,12 @@
 module Admin::V1
   class CouponsController < ApiController
     before_action :load_coupon, only: [:show, :update, :destroy]
-    
+
     def index
       @coupons = Coupon.all
     end
 
     def show; end
-
 
     def create
       @coupon = Coupon.new
@@ -29,7 +28,7 @@ module Admin::V1
     def load_coupon
       @coupon = Coupon.find(params[:id])
     end
-    
+
     def save_coupon!
       @coupon.save!
       render :show
