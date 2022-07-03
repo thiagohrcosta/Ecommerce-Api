@@ -23,7 +23,7 @@ RSpec.describe "Admin V1 Coupons as :admin", type: :request do
 
     context "with valid params" do
       let(:coupon_params) { { coupon: attributes_for(:coupon) }.to_json }
-    
+
       it "adds a new Coupon" do
         expect do
           post url, headers: auth_header(user), params: coupon_params
@@ -36,12 +36,12 @@ RSpec.describe "Admin V1 Coupons as :admin", type: :request do
         expect(body_json['coupon']).to eq expected_coupon
       end
     end
- 
+
     context "with invalid params" do
-      let(:coupon_invalid_params) do 
+      let(:coupon_invalid_params) do
         { coupon: attributes_for(:coupon, code: nil) }.to_json
       end
-    
+
       it 'does not add a new Coupon' do
         expect do
           post url, headers: auth_header(user), params: coupon_invalid_params
@@ -129,5 +129,4 @@ RSpec.describe "Admin V1 Coupons as :admin", type: :request do
       expect(body_json).to_not be_present
     end
   end
-
 end

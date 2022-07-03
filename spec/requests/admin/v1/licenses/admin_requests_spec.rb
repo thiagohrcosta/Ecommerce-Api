@@ -113,4 +113,19 @@ RSpec.describe "Admin V1 Licenses as :admin", type: :request do
       end
     end
   end
+
+  context "DELETE /licenses/:id" do
+    let(:url) { "/admin/v1/licenses/#{licenses.first.id}" }
+
+    it "deletes a License" do
+      expect do
+        delete url, headers: auth_header(user)
+      end.to change(License, :count).by(-1)
+    end
+
+    it "returns status 204 success" do
+      delete url, headers: auth_header(user)
+      expect(response).to have_http_status(:no_content)
+    end
+  end
 end
