@@ -10,7 +10,7 @@ Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE 
 ![enter image description here](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![enter image description here](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![enter image description here](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## Outras tecnologias utilizadas:
- 
+
 
 **Mailing**
 
@@ -19,11 +19,11 @@ Este repositório é composto pela API desenvolvida ao longo do **[BOOTCAMP ONE 
 **Auth**
 
 - **[Devise Token Auth](https://github.com/lynndylanhurley/devise_token_auth)**
-  
+
 **API**
 
 - **[Rack-cors](https://github.com/cyu/rack-cors)**
- 
+
 **Testes**:
 
 - **[Rspec](https://github.com/rspec/rspec-rails)**
@@ -98,11 +98,19 @@ Ao longo da primeira semana de desenvolvimento foram completadas as seguintes ta
 	- Coupon admin testes adicionado;
 	- Coupon client testes adicionado;
 	- Coupon unauthenticated testes adicionado.
-  
- - User 
+
+ - User
 	- User Controller adicionado;
 	- User JSON View adicionado;
 	- User Routes adicionada;
 	- User admin testes adicionado;
+
+### Desafio módulo 02 - Criar CRUD e testes para License
+
+	- License Model adicionado;
+	- License Controller adicionado;
+	- License JSON View adicionado;
+	- Licenses Routes adicionada;
+	- License admin testes adicionado;
 
 Obs: Readme será atualizado ao longo do curso
