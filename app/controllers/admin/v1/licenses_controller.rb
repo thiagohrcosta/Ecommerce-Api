@@ -38,7 +38,13 @@ module Admin::V1
 
     def license_params
       return {} unless params.has_key?(:license)
-      params.require(:license).permit(:id, :key, :user_id, :game_id)
+
+      params.require(:license).permit(
+        :id,
+        :game_id,
+        :user_id,
+        :key
+      )
     end
   end
 end
