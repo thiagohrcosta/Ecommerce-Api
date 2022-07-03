@@ -84,4 +84,33 @@ RSpec.describe "Admin V1 Licenses as :admin", type: :request do
       end
     end
   end
+
+  context "PATCH /licenses/:id" do
+    let(:url) { "/admin/v1/licenses/#{licenses.first.id}" }
+
+    context "with valid params" do
+      let(:license_params) { { license: attributes_for(:license, key: 'new_key') }.to_json }
+
+      it "updates a License" do
+        patch url, headers: auth_header(user), params: license_params
+        expect(body_json['license']['key']).to eq('new_key')
+      end
+    end
+
+    context "with invalid params" do
+      let(:license_invalid_params) do
+        { license: attributes_for(:license, key: nil) }.to_json
+      end
+
+      it 'does not update a License' do
+        patch url, headers: auth_header(user), params: license_invalid_params
+        expect(body_json['errors']['fields']).to have_key('key')
+      end
+
+      it 'returns unprocessable_entity status' do
+        patch url, headers: auth_header(user), params: license_invalid_params
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
+  end
 end
