@@ -105,7 +105,7 @@ Ao longo da primeira semana de desenvolvimento foram completadas as seguintes ta
 	- User Routes adicionada;
 	- User admin testes adicionado;
 
-### Desafio módulo 02 - Criar CRUD e testes para License
+ - License
 
 	- License Model adicionado;
 	- License Controller adicionado;
